@@ -15,9 +15,9 @@ using namespace std;
 namespace facebook {
 namespace xplat {
 
-class RSReactLocalizationModule : public module::CxxModule {
+class ReactLocalizationModule : public module::CxxModule {
  public:
-  RSReactLocalizationModule();
+  ReactLocalizationModule();
   virtual auto getConstants() -> std::map<std::string, folly::dynamic>;
   virtual auto getMethods() -> std::vector<Method>;
   std::string getName();
