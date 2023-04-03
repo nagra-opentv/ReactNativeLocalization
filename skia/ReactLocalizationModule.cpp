@@ -12,7 +12,6 @@
 
 #include "ReactLocalizationModule.h"
 
-using namespace folly;
 namespace facebook {
 namespace xplat {
 
@@ -32,7 +31,7 @@ auto ReactLocalizationModule::getMethods() -> std::vector<Method> {
   return {
     Method(
       "getLanguage",
-      [this](dynamic args, Callback cb) {
+      [this](folly::dynamic args, Callback cb) {
         cb({nullptr, getCurrentLanguage()});
       }
     ),

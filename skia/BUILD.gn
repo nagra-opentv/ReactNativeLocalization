@@ -16,7 +16,7 @@ config("LibReactLocalizationModule_config") {
                 ]
 }
 
-rn_cxx_component("ReactLocalization") {
+rn_cxx_tp_component("reactlocalization") {
 
   # RS Native module and its dependencies
   sources = [
