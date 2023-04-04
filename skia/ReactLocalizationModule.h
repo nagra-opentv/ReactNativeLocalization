@@ -15,12 +15,12 @@ using namespace std;
 namespace facebook {
 namespace xplat {
 
-class RSReactLocalizationModule : public module::CxxModule {
+class ReactLocalizationModule : public module::CxxModule {
  public:
-  RSReactLocalizationModule();
-  virtual auto getConstants() -> std::map<std::string, folly::dynamic>;
-  virtual auto getMethods() -> std::vector<Method>;
-  std::string getName();
+  ReactLocalizationModule();
+  std::map<std::string, folly::dynamic> getConstants() override;
+  std::vector<Method> getMethods() override;
+  std::string getName() override;
 
  private:
   std::string getCurrentLanguage();

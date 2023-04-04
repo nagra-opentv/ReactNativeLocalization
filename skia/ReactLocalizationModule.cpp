@@ -10,36 +10,35 @@
 #include "ReactSkia/utils/RnsLog.h"
 #include <cxxreact/JsArgumentHelpers.h>
 
-#include "RSReactLocalizationModule.h"
+#include "ReactLocalizationModule.h"
 
-using namespace folly;
 namespace facebook {
 namespace xplat {
 
-RSReactLocalizationModule::RSReactLocalizationModule() { }
+ReactLocalizationModule::ReactLocalizationModule() { }
 
-auto RSReactLocalizationModule::getConstants() -> std::map<std::string, folly::dynamic> {
+auto ReactLocalizationModule::getConstants() -> std::map<std::string, folly::dynamic> {
   return {
     {"language", getCurrentLanguage()}
   };
 }
 
-std::string RSReactLocalizationModule::getName() {
+std::string ReactLocalizationModule::getName() {
   return "ReactLocalization";
 }
 
-auto RSReactLocalizationModule::getMethods() -> std::vector<Method> {
+auto ReactLocalizationModule::getMethods() -> std::vector<Method> {
   return {
     Method(
       "getLanguage",
-      [this](dynamic args, Callback cb) {
+      [this](folly::dynamic args, Callback cb) {
         cb({nullptr, getCurrentLanguage()});
       }
     ),
   };
 }
 
-std::string RSReactLocalizationModule::getCurrentLanguage() {
+std::string ReactLocalizationModule::getCurrentLanguage() {
   std::string language(uloc_getDefault());
   RNS_LOG_TRACE("The Current ICU Language IS : " << language);
   return language;
@@ -48,7 +47,7 @@ std::string RSReactLocalizationModule::getCurrentLanguage() {
 #ifdef __cplusplus
 extern "C" {
 #endif
-RNS_EXPORT_MODULE(RSReactLocalizationModule)
+RNS_EXPORT_MODULE(ReactLocalization)
 #ifdef __cplusplus
 }
 #endif
