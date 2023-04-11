@@ -4,9 +4,9 @@
     "version": "2.3.1",
     "type": "modules",
     "skia": {
-      "TurboModuleRegistryGetEnforcingSpec" : [ 
+      "TurboModuleRegistryGetEnforcingSpec" : [
         "ReactLocalization"
-      ]   
-    }   
+      ]
+    }
   }
 }
