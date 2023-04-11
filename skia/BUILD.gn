@@ -16,9 +16,9 @@ config("LibReactLocalizationModule_config") {
                 ]
 }
 
-rn_cxx_tp_component("reactlocalization") {
+rns_cxx_tp_component("reactlocalization") {
 
-  # RS Native module and its dependencies
+  # Native module and its dependencies
   sources = [
     "ReactLocalizationModule.h",
     "ReactLocalizationModule.cpp",
